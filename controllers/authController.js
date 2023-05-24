@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const User = require('../database/models/userModel');
 
 const register = async (req, res) => {
@@ -9,7 +9,6 @@ const register = async (req, res) => {
             return res.status(409).json({error: 'Email already registered'});
         }
         const cryptPassword = await bcrypt.hash(password, 10);
-
         const newUser = new User({
             name,
             email,
@@ -27,7 +26,7 @@ const register = async (req, res) => {
     }
 }
 
-const login = async(req, res) => {
+const login = async (req, res) => {
     try {
         const {email, password} = req.body;
         const user = await User.findOne({email});
