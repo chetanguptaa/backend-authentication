@@ -5,7 +5,7 @@ const connectToTheDatabase = require('./database/database');
 const app = express();
 const port = 8000;
 
-// connectingToTheDatabase('')
+// connectToTheDatabase('')
 
 app.use(express.json());
 
