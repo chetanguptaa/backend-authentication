@@ -1,7 +1,7 @@
 const {
     getLogin,
     getRegistration, 
-    home
+    getHome
 } = require('../controllers/userController');
 const {
     register, 
@@ -13,7 +13,7 @@ const Router = express.Router();
 
 Router
 .get('/login', getLogin)
-.get('/home', home)
+.get('/home', getHome)
 .get('/registration', getRegistration);
 
 Router.post('/login', login);
