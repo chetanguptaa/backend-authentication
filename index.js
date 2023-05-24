@@ -10,6 +10,8 @@ const port = 8000;
 app.use(express.json());
 
 app.use('/users', Router);
+app.use('/users', register);
+app.use('/users', login);
 
 app.listen(port, () => {
     `server is listening on port ${port}`;
