@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
-const USERS = require('../database/models/userModel');
+// const USERS = require('../database/models/userModel');
+const USERS = [];
 
 const register = async (req, res) => {
     /* -------- DATABASE IMPLEMENTATION FOR LATER-------- */
@@ -79,7 +80,7 @@ const login = async (req, res) => {
     // }
     try {
         const {email, password} = req.body;
-        const user = USERS.find( (x) => x.email === email );
+        const user = await USERS.find( (x) => x.email === email );
         if(!user) {
             return res.status(401).json({
                 error: 'Invalid Email or password'

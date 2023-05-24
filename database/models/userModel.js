@@ -16,6 +16,5 @@
 // })
 
 // const User = mongoose.model('User', userSchema);
-const USERS = [];
 
 module.exports = USERS;
