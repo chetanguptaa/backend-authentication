@@ -10,11 +10,11 @@ const getRegistration = async (req, res) => {
     res.send('Registration Page');
 }
 
-const home = async (req, res) => {
+const getHome = async (req, res) => {
     res.send('Home Page');
 }
 module.exports = {
     getLogin,
     getRegistration,
-    home
+    getHome
 };
