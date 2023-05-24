@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const connectingToTheDatabase = async (URI) => mongoose.connect(URI, {
+const connectToTheDatabase = async (URI) => mongoose.connect(URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -12,5 +12,5 @@ const connectingToTheDatabase = async (URI) => mongoose.connect(URI, {
 })
 
 module.exports = {
-    connectingToTheDatabase
+    connectToTheDatabase
 }
