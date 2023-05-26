@@ -105,4 +105,23 @@ const login = async (req, res) => {
     }
 }
 
-module.exports = {register, login};
+const getUsers = async (req, res) => {
+    const newUser = USERS.map((user) => {
+        const {id, name, email} = user;
+        return {id, name, email};
+    })
+    res.json(newUser);
+}
+
+const getSingleUser = async (req, res) => {
+    const { userID } = req.params;
+    const singleUser = USERS.find(
+        (user) => user.id === Number(userID)
+    ) 
+    if(!singleUser) {
+        return res.status(404).send('user not found');
+    }
+    res.json(singleUser);
+}
+
+module.exports = {register, login, getUsers, getSingleUser};
