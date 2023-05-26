@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 // const USERS = require('../database/models/userModel');
 const USERS = [];
+let user_id_count = 0;
 
 const register = async (req, res) => {
     /* -------- DATABASE IMPLEMENTATION FOR LATER-------- */
@@ -40,7 +41,8 @@ const register = async (req, res) => {
         USERS.push({
             name, 
             email, 
-            cryptPassword
+            cryptPassword,
+            id: user_id_count++
         })
         res.status(201).json({
             message: 'Registration Successfull'
