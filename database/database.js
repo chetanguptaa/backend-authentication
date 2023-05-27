@@ -11,6 +11,4 @@ const connectToTheDatabase = async (URI) => mongoose.connect(URI, {
     console.error('Error connecting to the database: ' + error);
 })
 
-module.exports = {
-    connectToTheDatabase
-}
+module.exports = connectToTheDatabase
