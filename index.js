@@ -6,7 +6,9 @@ const app = express();
 const port = 8000;
 require('dotenv').config();
 
-// connectToTheDatabase('')
+const mongo_uri = process.env.MONGO_URI
+
+connectToTheDatabase(mongo_uri);
 
 app.use(express.json());
 
