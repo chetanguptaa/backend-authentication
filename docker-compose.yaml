@@ -33,14 +33,10 @@ services:
     restart: always
     ports:
       - 8000:8000
-    environment:
-      MONGO_URI: ${MONGO_URI}
     depends_on:
       - mongodb
     networks:
       - mongo-network
-    env_file:
-      - .env
 networks:
   mongo-network:
     driver: bridge
