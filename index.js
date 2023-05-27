@@ -4,6 +4,7 @@ const Router = require('./routes/userRoutes');
 const connectToTheDatabase = require('./database/database');
 const app = express();
 const port = 8000;
+require('dotenv').config();
 
 // connectToTheDatabase('')
 
